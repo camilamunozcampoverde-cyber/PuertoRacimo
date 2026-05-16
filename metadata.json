@@ -1,0 +1,8 @@
+{
+  "name": "Puerto Racimo - Tradición Orense",
+  "description": "Aplicación premium de pedidos para Puerto Racimo. Lo mejor del verde orense en tu mesa.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

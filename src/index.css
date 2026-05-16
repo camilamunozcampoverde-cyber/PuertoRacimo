@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  
+  --color-green-racimo: #1D4D2F;
+  --color-gold-ocre: #B8860B;
+  --color-white-arena: #F2EFE9;
+  --color-bg-black: #0F110E;
+  
+  --color-zinc-900: #18181B;
+  --color-zinc-800: #27272A;
+  --color-zinc-700: #3F3F46;
+}
+
+@layer base {
+  :root {
+    --app-green: #1D4D2F;
+    --app-gold: #B8860B;
+    --app-white: #F2EFE9;
+    --app-smoke: #18181B;
+    --app-dark: #0F110E;
+    --app-zinc-card: #18181B;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --app-green: #1D4D2F;
+      --app-gold: #B8860B;
+      --app-white: #F2EFE9;
+      --app-smoke: #18181B;
+      --app-dark: #0F110E;
+      --app-zinc-card: #18181B;
+    }
+  }
+
+  body {
+    @apply font-sans text-white-arena bg-bg-black transition-colors duration-300;
+  }
+
+  h1, h2, h3 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer components {
+  .btn-press {
+    @apply transition-transform duration-100 active:scale-95;
+  }
+  
+  .glass-card {
+    @apply bg-zinc-900/50 backdrop-blur-md border border-zinc-800;
+  }
+
+  .sticky-nav {
+    @apply sticky top-0 z-50 bg-[#0A0A0A]/80 backdrop-blur-lg border-b border-zinc-800;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-zinc-800 rounded-full;
+}
